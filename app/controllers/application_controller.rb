@@ -37,7 +37,10 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/login" do
-
+    if logged_in?
+    else
+      erb :failure
+    end
   end
 
   get "/failure" do
