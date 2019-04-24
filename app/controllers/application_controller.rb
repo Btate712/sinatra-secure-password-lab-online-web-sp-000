@@ -18,7 +18,7 @@ class ApplicationController < Sinatra::Base
 
   post "/signup" do
     binding.pry
-    if !params[:username] == "" && !params[:password] == ""
+    if params['username'] != "" && params['password'] != ""
       binding.pry
       user = User.new(:username => params[:username], :password => params[:password])
       erb :login
