@@ -37,8 +37,8 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/login" do
-    if !logged_in?
-      erb :failure
+    if params[:password] == ""
+      redirect '/faliure'
     end
   end
 
