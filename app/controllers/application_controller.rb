@@ -21,6 +21,7 @@ class ApplicationController < Sinatra::Base
       user = User.new(:username => params[:username], :password => params[:password])
       erb :login
     else
+      binding.pry
       redirect '/failure'
     end
   end
