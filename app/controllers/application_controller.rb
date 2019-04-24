@@ -18,8 +18,8 @@ class ApplicationController < Sinatra::Base
 
   post "/signup" do
     if !!params[:user_name] && !!params[:password]
-      user = User.new(:user_name => params[:user_name], :password => params[:password])
       binding.pry
+      user = User.new(:user_name => params[:user_name], :password => params[:password])
       erb :login
     else
       redirect '/failure'
