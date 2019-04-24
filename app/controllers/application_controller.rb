@@ -38,6 +38,7 @@ class ApplicationController < Sinatra::Base
 
   post "/login" do
     if params[:password] == "" || params[:username] == ""
+      binding.pry
       erb :failure
     end
   end
