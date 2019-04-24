@@ -27,7 +27,8 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/account' do
-    @user = User.find(session[:user_id])
+    user = User.find(session[:user_id])
+    user.save
     erb :account
   end
 
@@ -39,7 +40,8 @@ class ApplicationController < Sinatra::Base
   post "/login" do
     if params[:password] == "" || params[:username] == ""
       redirect '/failure'
-    end
+    elsif current_user
+    
   end
 
   get "/failure" do
